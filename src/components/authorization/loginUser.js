@@ -5,16 +5,17 @@ export const loginUser = (authorizationPage) => {
         return dispatch => {
 
             function _loginUser() {
-                const url = `http://localhost:8000/user/login`;
+                const url = `http://localhost/php-server/authentication/auth.php`;
 
-                let body = {
-                    login: authorizationPage.authTextLogin,
-                    password: authorizationPage.authTextPass
-                };
-                axios.post(url, body)
+                let userBody = new FormData();
+                userBody.append('login', authorizationPage.authTextLogin);
+                userBody.append('password', authorizationPage.authTextPass);
+
+                axios.post(url, userBody)
                     .then((res) => {
-                        localStorage.setItem("token", res.data.token);
-                        dispatch(createActionLoginUser(res.data.user));
+
+                        //localStorage.setItem("token", res.data.token);
+                        dispatch(createActionLoginUser(res.data[0].login));
                     })
                     .catch((err) => {
                         if (err.response.status === 401) {

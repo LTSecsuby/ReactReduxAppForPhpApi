@@ -1,22 +1,181 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #cededb;
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+.error {
+  color: red;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.timeLabel {
+    font-size: 10px;
+    color: blue;
+    text-shadow: #effffc 1px 2px 20px;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.textLabel {
+    font-size: 20px;
+    color: blue;
+    text-shadow: #effffc 1px 2px 20px;
+}
+
+.textLabelGroup {
+    font-size: 20px;
+    color: blue;
+    text-shadow: #effffc 1px 2px 20px;
+    text-decoration: underline;
+}
+
+.textLabelUser {
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    text-shadow: #effffc 1px 2px 20px;
+}
+
+.textLabelFriend {
+    font-weight: bold;
+    font-size: 20px;
+    color: green;
+    text-shadow: #effffc 1px 2px 20px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: Solid 3px black;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    min-height: 35px;
+    max-height: 50px;
+    min-width: 140px;
+    max-width: 140px;
+    border-radius: 0.5em;
+    margin: 5px;
+}
+
+button:hover {
+    color: black;
+    border: 3px solid white;
+}
+
+button:active, button:focus {
+    outline: none;
+}
+
+textarea {
+    background-color: #4CAF50;
+    border: 3px solid black;
+    resize: none;
+    border-radius: 0.5em;
+    font-size: 18px;
+    outline: none;
+    padding-left: 7px;
+    color: white;
+}
+
+textarea::placeholder {
+    color: white;
+    font-size: 18px;
+}
+
+textarea:hover::placeholder {
+    color: black;
+    font-size: 18px;
+}
+
+textarea:hover {
+    background-color: #4CAF50;
+    border: 3px solid white;
+    resize: none;
+    border-radius: 0.5em;
+    outline: none;
+    font-size: 18px;
+}
+
+textarea:active, textarea:focus {
+    outline: none;
+}
+
+input {
+    padding-left: 7px;
+    background-color: #4CAF50;
+    border: 3px solid black;
+    border-radius: 0.5em;
+    font-size: 18px;
+    outline: none;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+    font-size: 18px;
+}
+
+input:hover::placeholder {
+    color: black;
+    font-size: 18px;
+}
+
+input:hover {
+    background-color: #4CAF50;
+    border: 3px solid white;
+    border-radius: 0.5em;
+    outline: none;
+    font-size: 18px;
+}
+
+input:active, input:focus {
+    outline: none;
+}
+
+.blockContentAll {
+    display: grid;
+    grid-template-areas:
+            "userBarLogin"
+            "userBarCreate"
+            "friendsAddContent"
+            "friendsListContent";
+    grid-template-columns: minmax(auto, 900px);
+    grid-template-rows: minmax(145px, auto) minmax(145px, auto) minmax(auto, auto) minmax(auto, auto);
+    grid-gap: 10px;
+    margin: 0;
+}
+
+.userBarLogin {
+    border: 3px solid black;
+    border-radius: 0.5em;
+    padding: 25px 10px;
+    grid-area: userBarLogin;
+    background-color: #93dbff;
+}
+
+.userBarCreate {
+    border: 3px solid black;
+    border-radius: 0.5em;
+    padding: 25px 10px;
+    grid-area: userBarCreate;
+    background-color: #93dbff;
+}
+
+.friendsAddContent {
+    border: 3px solid black;
+    border-radius: 0.5em;
+    padding: 25px 10px;
+    grid-area: friendsAddContent;
+    background-color: #93dbff;
+}
+
+.friendsListContent {
+    grid-area: friendsListContent;
 }

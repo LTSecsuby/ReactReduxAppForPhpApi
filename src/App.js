@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AuthorizationPageContainer from "./components/authorization/AuthorizationPageContainer";
+import NewFriendPageContainer from "./components/new-friend-form/NewFriendPageContainer";
+import RequestFriendsPageContainer from "./components/send-friend-request/RequestFriendsPageContainer";
+import RegistrationPageContainer from "./components/registration/RegistrationPageContainer";
+import {connect} from "react-redux";
+import {getProfile} from "./getProfile";
+import FriendListPageContainer from "./components/friends-list/FriendListPageContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+    componentDidMount = () => {
+        this.props.getProfileFetch()
+    };
+
+    render() {
+
+        return (
+            <div className="blockContentAll">
+                <div className="friendsAddContent">
+                    <RequestFriendsPageContainer />
+                    <NewFriendPageContainer />
+                </div>
+                <div className="friendsListContent">
+                    <FriendListPageContainer />
+                </div>
+                <div className="userBarLogin">
+                    <AuthorizationPageContainer />
+                </div>
+                <div className="userBarCreate">
+                    <RegistrationPageContainer />
+                </div>
+
+            </div>
+        );
+    }
+
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+    getProfileFetch: () => dispatch(getProfile())
+
+});
+
+export default connect(null, mapDispatchToProps)(App);
+
