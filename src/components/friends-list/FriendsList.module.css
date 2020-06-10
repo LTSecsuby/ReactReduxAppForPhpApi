@@ -1,0 +1,29 @@
+.img {
+    width: 25px;
+}
+
+.friendsListContent {
+    display: grid;
+    grid-template-areas:
+            "loginFriendContent messageFriendContent";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(400px, auto);
+    grid-gap: 10px;
+    margin: 0;
+}
+
+.loginFriendContent {
+    border: 3px solid black;
+    border-radius: 0.5em;
+    padding-left: 10px;
+    grid-area: loginFriendContent;
+    background-color: #93dbff;
+}
+
+.messageFriendContent {
+    border: 3px solid black;
+    border-radius: 0.5em;
+    padding-left: 10px;
+    grid-area: messageFriendContent;
+    background-color: #93dbff;
+}
